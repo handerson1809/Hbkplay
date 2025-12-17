@@ -1,174 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HBKPlay TV</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
-    }
-
-    header {
-      background: linear-gradient(90deg, #ff004c, #ff7b00);
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    header img {
-      max-height: 140px;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-
-    .intro {
-      text-align: center;
-      padding: 20px;
-      background-color: #1a1a1a;
-      font-size: 1.1em;
-    }
-
-    .planos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 30px 20px;
-    }
-
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 0 15px rgba(255, 0, 76, 0.4);
-      text-align: center;
-    }
-
-    .card h2 {
-      color: #ff004c;
-      margin-bottom: 10px;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .card li {
-      margin: 8px 0;
-      font-size: 1em;
-    }
-
-    .cta {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      font-size: 1.1em;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #fff;
-      transition: transform 0.3s ease;
-    }
-
-    .cta a:hover {
-      transform: scale(1.05);
-    }
-
-    .whatsapp {
-      background-color: #25D366;
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
-    }
-
-    .android {
-      background-color: #4285F4;
-      box-shadow: 0 0 10px rgba(66,133,244,0.5);
-    }
-
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
-    @media (max-width: 600px) {
-      .planos {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBKPlay TV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+        }
+        header img {
+            max-width: 200px;
+        }
+        h1 {
+            margin: 10px 0;
+            color: #ff6600;
+        }
+        .planos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .plano {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+        }
+        .plano h2 {
+            color: #ff6600;
+        }
+        .plano p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo HBKPlay TV">
-    <h1>HBKPlay TV</h1>
-  </header>
+    <header>
+        <!-- Logo corrigida -->
+        <img src="logo.png" alt="Logo HBKPlay TV">
+        <h1>HBKPlay TV</h1>
+        <p>A melhor da TV, tudo em um só lugar. Sem complicação.</p>
+    </header>
 
-  <div class="intro">
-    <p>A melhor da TV, tudo em um só lugar. Sem complicação.</p>
-    <p>Assista onde quiser: Smart TV, celular, tablet ou computador. Sem antenas, sem cabos.</p>
-  </div>
-
-  <div class="planos">
-    <div class="card">
-      <h2>Plano Mensal</h2>
-      <ul>
-        <li>PIX: R$35</li>
-        <li>Cartão: R$42</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Plano Semestral</h2>
-      <ul>
-        <li>PIX: R$180</li>
-        <li>Cartão: R$210 (3x R$70)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Plano Anual</h2>
-      <ul>
-        <li>PIX: R$260</li>
-        <li>Cartão: R$320 (5x R$64)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>📺 Benefícios</h2>
-      <ul>
-        <li>+3.000 canais ao vivo</li>
-        <li>+30.000 séries e +20.000 filmes</li>
-        <li>Novelas, doramas e muito mais</li>
-        <li>Qualidade HD, Full HD e 4K</li>
-        <li>Teste grátis por 4 horas</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="cta">
-    <a href="https://wa.me/5569992264789" target="_blank" class="whatsapp">💬 Fale conosco no WhatsApp</a>
-    <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" class="android">📲 Baixar para Android / TV Box</a>
-  </div>
-
-  <footer>
-    © 2025 HBKPlay TV – Todos os direitos reservados
-  </footer>
+    <section class="planos">
+        <div class="plano">
+            <h2>Plano Mensal</h2>
+            <p>PIX: R$35</p>
+            <p>Cartão: R$42</p>
+        </div>
+        <div class="plano">
+            <h2>Plano Semestral</h2>
+            <p>PIX: R$180</p>
+            <p>Cartão: R$210 (3x R$70)</p>
+        </div>
+        <div class="plano">
+            <h2>Plano Anual</h2>
+            <p>PIX: R$260</p>
+            <p>Cartão: R$320 (5x R$64)</p>
+        </div>
+    </section>
 </body>
 </html>
