@@ -49,31 +49,23 @@
         }
         .app-card:hover { border-color: var(--primary); background: #282828; transform: translateY(-5px); }
         .app-card i { font-size: 2.5rem; color: var(--accent); }
+        .app-card div { text-align: left; }
+        .app-card b { display: block; font-size: 1.1rem; }
+        .app-card span { font-size: 0.8rem; color: #888; }
 
         .planos { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; padding: 20px 0 60px; }
         .plano-card { background: #111; border: 1px solid #333; border-radius: 25px; padding: 40px 30px; width: 320px; text-align: center; position: relative; }
         .plano-card.destaque { border: 2px solid var(--primary); transform: scale(1.05); }
         .valor-pix { font-size: 3.5rem; font-weight: 900; color: var(--accent); margin: 10px 0 5px; }
+        .valor-pix span { font-size: 1rem; color: #aaa; }
         .valor-cartao { background: rgba(255, 51, 102, 0.1); color: var(--card-color); padding: 8px; border-radius: 10px; font-size: 0.9rem; font-weight: bold; margin-bottom: 20px; display: inline-block; }
 
-        /* ESTILO CORRIGIDO DO BOTÃO WHATSAPP */
         .whatsapp-float { 
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            background: #25d366; 
-            width: 65px; 
-            height: 65px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 35px; 
-            color: #fff; 
-            z-index: 9999; /* Garante que fique por cima de tudo */
-            text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: 0.3s;
+            position: fixed; bottom: 30px; right: 30px; background: #25d366; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; 
+            align-items: center; justify-content: center; font-size: 35px; 
+            color: #fff; z-index: 9999; text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
     </style>
@@ -93,32 +85,42 @@
 
     <div class="container">
         <div class="download-area">
-            <h2 style="margin-bottom: 10px;">Nossos Aplicativos</h2>
+            <h2 style="margin-bottom: 10px;">Nossos Aplicativos Oficiais</h2>
+            <p style="color: #aaa; margin-bottom: 30px;">Funciona em Smart TVs, Android TV, TV Box e Celulares.</p>
             <div class="app-grid">
                 <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" class="app-card">
                     <i class="fab fa-google-play"></i>
-                    <div><b>Ibo Revenda</b><span>Ideal para TV Box</span></div>
+                    <div><b>Ibo Revenda</b><span>Ideal para TV Box e Android TV</span></div>
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.gplayer.pro" target="_blank" class="app-card">
                     <i class="fab fa-google-play"></i>
-                    <div><b>Vu Revenda</b><span>Ideal para Smart TV</span></div>
+                    <div><b>Vu Revenda</b><span>Ideal para Smart TV e Celular</span></div>
                 </a>
             </div>
         </div>
 
+        <h2 style="text-align: center; color: var(--primary); text-transform: uppercase;">Escolha seu Plano</h2>
         <div class="planos">
             <div class="plano-card">
                 <h3>Plano Mensal</h3>
                 <div class="valor-pix">R$ 35<span>/mês</span></div>
-                <div class="valor-cartao">Cartão: R$ 39,90</div>
+                <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 39,90</div>
                 <a href="https://wa.me/556992264789?text=Olá! Quero assinar o PLANO MENSAL de R$ 35,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
 
             <div class="plano-card destaque">
+                <div style="background: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">MAIS VENDIDO</div>
                 <h3>Plano Semestral</h3>
                 <div class="valor-pix">R$ 180<span>/6 meses</span></div>
-                <div class="valor-cartao">Cartão: R$ 195,00</div>
+                <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 195,00</div>
                 <a href="https://wa.me/556992264789?text=Olá! Quero assinar o PLANO SEMESTRAL de R$ 180,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
+            </div>
+
+            <div class="plano-card">
+                <h3>Plano Anual</h3>
+                <div class="valor-pix">R$ 260<span>/ano</span></div>
+                <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 285,00</div>
+                <a href="https://wa.me/556992264789?text=Olá! Quero o melhor custo-benefício: PLANO ANUAL de R$ 260,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
         </div>
     </div>
