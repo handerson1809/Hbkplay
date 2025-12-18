@@ -38,7 +38,7 @@
         }
 
         header {
-            padding: 80px 5% 40px;
+            padding: 60px 5% 30px;
             max-width: 1100px;
             margin: 0 auto;
             display: flex;
@@ -81,55 +81,62 @@
             font-size: 1.1rem;
             box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
             transition: 0.3s;
+            display: inline-block;
         }
 
         .btn-principal:hover { transform: scale(1.05); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 5%; }
 
-        .download-section {
-            text-align: center;
-            padding: 40px 5%;
-            background: rgba(255, 102, 0, 0.05);
-            border-radius: 30px;
-            margin: 40px auto;
-            max-width: 900px;
-            border: 1px dashed rgba(255, 102, 0, 0.2);
-        }
-
-        .download-btns {
-            display: flex;
-            justify-content: center;
+        /* Nova Seção de Grade de Conteúdo */
+        .conteudo-destaque {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        .btn-download {
-            background: #222;
-            color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid #444;
+        .categoria-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid #222;
             transition: 0.3s;
         }
 
-        .btn-download:hover { background: #333; border-color: var(--primary); transform: translateY(-3px); }
-        .btn-download i { font-size: 1.8rem; color: var(--primary); }
-        .btn-download div { text-align: left; }
-        .btn-download span { display: block; font-size: 0.7rem; color: #888; }
-        .btn-download b { font-size: 1rem; }
+        .categoria-card:hover { border-color: var(--primary); }
 
+        .categoria-card h3 {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+        }
+
+        .plataformas-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .plataforma-tag {
+            background: #222;
+            padding: 5px 12px;
+            border-radius: 5px;
+            border: 1px solid #333;
+        }
+
+        /* Planos */
         .planos {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 25px;
-            padding: 40px 0 100px;
+            padding: 20px 0 60px;
         }
 
         .plano-card {
@@ -178,7 +185,8 @@
 
         @media (max-width: 768px) {
             .brand-box { flex-direction: column-reverse; }
-            header h1 { font-size: 3rem; }
+            header h1 { font-size: 2.8rem; }
+            .plano-card.destaque { transform: scale(1); }
         }
     </style>
 </head>
@@ -192,21 +200,47 @@
             <img src="logo.png" alt="HBKPlay Logo">
         </div>
         <p>A maior grade de canais, filmes e séries. Estabilidade 4K direto no seu dispositivo.</p>
-        <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal">SOLICITAR TESTE DE 4 HORAS</a>
+        <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal">TESTE GRÁTIS DE 4 HORAS</a>
     </header>
 
-    <div class="download-section">
-        <h2 style="margin: 0; font-size: 1.5rem;">Baixe nosso Aplicativo Oficial</h2>
-        <p style="color: #888; margin-top: 5px;">Instale agora no seu Android, TV Box ou Smart TV</p>
-        <div class="download-btns">
-            <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" class="btn-download">
-                <i class="fab fa-android"></i>
-                <div><span>Disponível para</span><b>Android / TV Box</b></div>
-            </a>
-            <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-download">
-                <i class="fas fa-download"></i>
-                <div><span>Outros aparelhos</span><b>Baixar APK Direto</b></div>
-            </a>
+    <div class="container">
+        <h2 style="text-align: center; color: #fff; margin-bottom: 30px;">O Melhor Conteúdo está aqui</h2>
+        <div class="conteudo-destaque">
+            
+            <div class="categoria-card">
+                <h3><i class="fas fa-futbol"></i> Futebol & Esportes</h3>
+                <p>Todos os jogos do Brasileirão, Champions League, Libertadores e canais de luta.</p>
+                <div class="plataformas-logos">
+                    <span class="plataforma-tag">Premiere</span>
+                    <span class="plataforma-tag">ESPN</span>
+                    <span class="plataforma-tag">TNT Sports</span>
+                    <span class="plataforma-tag">Combate</span>
+                </div>
+            </div>
+
+            <div class="categoria-card">
+                <h3><i class="fas fa-film"></i> Filmes & Séries</h3>
+                <p>O maior catálogo On Demand com lançamentos semanais direto do cinema.</p>
+                <div class="plataformas-logos">
+                    <span class="plataforma-tag">Netflix</span>
+                    <span class="plataforma-tag">Disney+</span>
+                    <span class="plataforma-tag">HBO Max</span>
+                    <span class="plataforma-tag">Globoplay</span>
+                    <span class="plataforma-tag">Prime Video</span>
+                </div>
+            </div>
+
+            <div class="categoria-card">
+                <h3><i class="fas fa-tv"></i> Canais de TV</h3>
+                <p>Grade completa de canais abertos e fechados em HD, Full HD e Ultra 4K.</p>
+                <div class="plataformas-logos">
+                    <span class="plataforma-tag">Documentários</span>
+                    <span class="plataforma-tag">Kids</span>
+                    <span class="plataforma-tag">Notícias</span>
+                    <span class="plataforma-tag">Variedades</span>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -219,7 +253,7 @@
                 <div class="valor-pix">R$ 35<span>/mês</span></div>
                 <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 39,90</div>
                 <p style="color: #666; font-size: 0.9rem;">Pagamento via PIX tem desconto!</p>
-                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%; display: inline-block;">ASSINAR</a>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
 
             <div class="plano-card destaque">
@@ -228,7 +262,7 @@
                 <div class="valor-pix">R$ 180<span>/6 meses</span></div>
                 <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 195,00</div>
                 <p style="color: #666; font-size: 0.9rem;">Equivale a R$ 30,00 por mês no PIX</p>
-                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%; display: inline-block;">ASSINAR</a>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
 
             <div class="plano-card">
@@ -236,20 +270,22 @@
                 <div class="valor-pix">R$ 260<span>/ano</span></div>
                 <div class="valor-cartao"><i class="far fa-credit-card"></i> Cartão: R$ 285,00</div>
                 <p style="color: #666; font-size: 0.9rem;">Melhor custo-benefício para 2 telas</p>
-                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%; display: inline-block;">ASSINAR</a>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
 
         </div>
+    </div>
+
+    <div style="text-align: center; padding-bottom: 60px;">
+        <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" style="color: #666; text-decoration: none; border: 1px solid #333; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px;">
+            <i class="fab fa-android" style="font-size: 1.5rem;"></i>
+            <span>Baixar Player para Android / TV Box</span>
+        </a>
     </div>
 
     <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem; border-top: 1px solid #111;">
-        &copy; 2024 HBKPlay TV - Qualidade e Estabilidade.
-    </footer>
-
-</body>
-</html>
-
+    <footer style="text-align: center; padding:
+    
