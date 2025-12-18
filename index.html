@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBKPlay TV</title>
+    <title>HBKPlay TV - O Melhor do Entretenimento</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #111;
@@ -15,83 +15,161 @@
         }
         header {
             background-color: #222;
-            padding: 20px;
+            padding: 40px 20px;
+            border-bottom: 3px solid #ff6600;
         }
         header img {
-            max-width: 200px;
+            max-width: 180px;
+            margin-bottom: 15px;
         }
         h1 {
             margin: 10px 0;
             color: #ff6600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+        
+        /* Nova Seção de Conteúdo */
+        .conteudo-info {
+            padding: 40px 20px;
+            background-image: linear-gradient(to bottom, #222, #111);
+        }
+        .grid-conteudo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .item-conteudo {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .item-conteudo h3 { color: #00ffcc; margin-bottom: 10px; }
+        .item-conteudo ul { list-style: none; padding: 0; font-size: 0.9em; color: #ccc; }
+        .item-conteudo li { margin: 5px 0; }
+
         .planos {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px;
+            margin: 40px 20px;
         }
         .plano {
             background-color: #333;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            width: 250px;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 15px;
+            width: 280px;
+            border: 1px solid #444;
+            transition: transform 0.3s;
         }
-        .plano h2 {
-            color: #ff6600;
+        .plano:hover {
+            transform: translateY(-10px);
+            border-color: #ff6600;
         }
-        .plano p {
-            margin: 5px 0;
-        }
+        .plano h2 { color: #ff6600; margin-top: 0; }
+        .plano .preco { font-size: 1.5em; font-weight: bold; margin: 15px 0; }
+        
         .contato {
             background-color: #222;
-            padding: 20px;
+            padding: 40px 20px;
             margin-top: 30px;
         }
-        .contato h2 {
-            color: #ff6600;
-        }
-        .contato a {
-            color: #00ffcc;
+        .contato h2 { color: #ff6600; }
+        .btn-contato {
+            display: inline-block;
+            background-color: #25d366;
+            color: white !important;
+            padding: 15px 30px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Logo corrigida -->
         <img src="logo.png" alt="Logo HBKPlay TV">
         <h1>HBKPlay TV</h1>
-        <p>A melhor da TV, tudo em um só lugar. Sem complicação.</p>
+        <p>A melhor experiência em TV Digital. Estabilidade e Qualidade 4K.</p>
     </header>
+
+    <section class="conteudo-info">
+        <h2>O que você terá acesso:</h2>
+        <div class="grid-conteudo">
+            <div class="item-conteudo">
+                <h3>📺 Canais Abertos e Fechados</h3>
+                <ul>
+                    <li>Todos os canais da TV Aberta</li>
+                    <li>Variedade de Documentários</li>
+                    <li>Canais de Notícias 24h</li>
+                    <li>Desenhos e Kids</li>
+                </ul>
+            </div>
+            <div class="item-conteudo">
+                <h3>⚽ Esportes Premium</h3>
+                <ul>
+                    <li>Todos os jogos do Brasileirão</li>
+                    <li>Libertadores e Champions</li>
+                    <li>Canais de Luta e UFC</li>
+                    <li>Premier League e mais</li>
+                </ul>
+            </div>
+            <div class="item-conteudo">
+                <h3>🎬 Cinema em Casa</h3>
+                <ul>
+                    <li>+50.000 Filmes e Séries</li>
+                    <li>Lançamentos do Cinema</li>
+                    <li>Conteúdo das principais Streamings</li>
+                    <li>Canais HBO e Telecine</li>
+                </ul>
+            </div>
+            <div class="item-conteudo">
+                <h3>🌟 Qualidade Técnica</h3>
+                <ul>
+                    <li>Resolução SD, HD, FHD e 4K</li>
+                    <li>Guia de Programação (EPG)</li>
+                    <li>Suporte Técnico Rápido</li>
+                    <li>Sem Antenas, apenas Internet</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <section class="planos">
         <div class="plano">
             <h2>Plano Mensal</h2>
-            <p>PIX: R$35</p>
+            <div class="preco">PIX: R$35</div>
             <p>Cartão: R$42</p>
+            <p>Acesso Completo</p>
         </div>
-        <div class="plano">
+        <div class="plano" style="border-color: #ff6600;">
+            <span style="background:#ff6600; padding: 2px 10px; border-radius: 5px; font-size: 12px;">MAIS POPULAR</span>
             <h2>Plano Semestral</h2>
-            <p>PIX: R$180</p>
+            <div class="preco">PIX: R$180</div>
             <p>Cartão: R$210 (3x R$70)</p>
+            <p>Acesso Completo</p>
         </div>
         <div class="plano">
             <h2>Plano Anual</h2>
-            <p>PIX: R$260</p>
+            <div class="preco">PIX: R$260</div>
             <p>Cartão: R$320 (5x R$64)</p>
+            <p>Acesso Completo</p>
         </div>
     </section>
 
-    <!-- Seção de aplicativo e contato -->
     <section class="contato">
-        <h2>Baixe nosso aplicativo</h2>
-        <p>Disponível para Android (TV Box e celular).<br>
-        <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank">Clique aqui para baixar na Play Store</a></p>
-
-        <h2>Entre em contato</h2>
-        <p>WhatsApp: <a href="https://wa.me/message/X3DLEGBNOWQRH1" target="_blank">Fale conosco</a></p>
+        <h2>Assista em qualquer lugar</h2>
+        <p>Compatível com Smart TV, TV Box, Celular, Tablet e PC.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" style="color: #00ffcc;">Baixar Aplicativo Android</a>
+        
+        <br><br>
+        <h2>Dúvidas ou Ativação Imediata?</h2>
+        <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-contato" target="_blank">CHAMAR NO WHATSAPP</a>
     </section>
 </body>
 </html>
