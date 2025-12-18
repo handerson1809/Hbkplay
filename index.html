@@ -5,78 +5,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBKPlay TV | A Revolução do Entretenimento</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff6600;
-            --primary-glow: rgba(255, 102, 0, 0.4);
-            --bg-dark: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-gray: #bbb;
+            --primary-glow: rgba(255, 102, 0, 0.3);
+            --bg-dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--bg-dark);
             color: #fff;
-            scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
-        /* Efeito de iluminação de fundo */
-        body::before {
-            content: "";
-            position: fixed;
-            top: -10%;
-            right: -10%;
-            width: 50%;
-            height: 50%;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+        /* Efeito de Luz Superior (como na imagem) */
+        .glow-top {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 400px;
+            background: radial-gradient(circle at 50% 0%, var(--primary-glow) 0%, transparent 70%);
             z-index: -1;
-            filter: blur(100px);
+            pointer-events: none;
         }
 
-        /* Header com Logo à Direita */
         header {
-            padding: 60px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            padding: 80px 5% 40px;
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        .header-content {
-            flex: 1;
-            text-align: left;
+        /* Título e Logo Lado a Lado */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
         }
 
         header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 900;
             margin: 0;
-            background: linear-gradient(to right, #fff, var(--primary));
+            letter-spacing: -2px;
+            background: linear-gradient(to bottom, #fff 40%, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-        }
-
-        header .hero-p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-top: 15px;
-            max-width: 500px;
         }
 
         header img {
-            max-width: 200px;
-            filter: drop-shadow(0 0 20px var(--primary-glow));
-            transition: transform 0.5s ease;
+            max-width: 120px;
+            filter: drop-shadow(0 0 15px var(--primary-glow));
         }
 
-        header img:hover {
-            transform: scale(1.
-            
+        header p {
+            font-size: 1.4rem;
+            color: #ccc;
+            margin: 10px 0 30px;
+        }
+
+        .btn-teste {
+            display: inline-block;
+            background: linear-gradient(to right, #ff8c00, #ff4500);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(255, 102, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        /* O que você terá acesso (Grid de Conteúdo) */
+        .info-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .info-section h2 {
+            text-align: left;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+        }
+
+        .grid-conteudo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .card-info {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .card-info h3 {
+            color: #00ffcc;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-info p {
+            color: #888;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Planos */
+        .planos-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .planos-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .plano-card {
+            background: var(--bg-dark);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            width: 300px;
+            position: relative;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .plano-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.1);
+        }
+
+        .tag-promo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .plano-card h3 { font-size: 1.5rem; color: #fff; }
+        .plano-card .valor { font-size: 3rem; font-weight: 900; margin: 20px 0; color: #00ffcc; }
+        
+        /* Botão flutuante */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .brand-container { flex-direction: column-reverse; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-top"></div>
+
+    <header>
+        <div class="brand-container">
+            <h1>HBKPlay TV</h1>
+            <img src="logo.png" alt="Logo">
+        </div>
+        <p>A Revolução de Entretenimento. Qualidade 4K.</p>
+        <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-teste">Experiente 7 dias Grátis! Chame no WhatsApp</a>
+    </header>
+
+    <section class="info-section">
+        <h2>O que você terá acesso:</h2>
+        <div class="grid-conteudo">
+            <div class="card-info">
+                <h3><i class="fas fa-tv"></i> Canais Abertos</h3>
+                <p>Grade completa com alta estabilidade e sem delay.</p>
+            </div>
+            <div class="card-info">
+                <h3><i class="fas fa-film"></i> Filmes e Séries</h3>
+                <p>Os maiores lançamentos do cinema e streaming atualizados.</p>
+            </div>
+            <div class="card-info">
+                <h3><i class="fas fa-futbol"></i> Esportes 4K</h3>
+                <p>Premiere, Libertadores e canais internacionais exclusivos.</p>
+            </div>
+            <div class="card-info">
+                <h3><i class="fas fa-user-shield"></i> Suporte VIP</h3>
+                <p>Atendimento rápido e personalizado via WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="planos-section">
+        <div class="planos-grid">
+            <div class="plano-card">
+                <h3>Mensal</h3>
+                <div class="valor">R$ 35</div>
+                <p>Assine e assista agora</p>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-teste" style="padding: 10px 20px;">Comprar</a>
+            </div>
+            <div class="plano-card" style="border-color: var(--primary);">
+                <div class="tag-promo">TAG</div>
+                <h3>Semestral</h3>
+                <div class="valor">R$ 180</div>
+                <p>O mais vendido hoje</p>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-teste" style="padding: 10px 20px;">Comprar</a>
+            </div>
+            <div class="plano-card">
+                <div class="tag-promo">TAG</div>
+                <h3>Anual</h3>
+                <div class="valor">R$ 260</div>
+                <p>Melhor custo-benefício</p>
+                <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="btn-teste" style="padding: 10px 20px;">Comprar</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/message/X3DLEGBNOWQRH1" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
+
