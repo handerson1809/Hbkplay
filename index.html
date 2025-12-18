@@ -38,51 +38,18 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 5%; }
         
-        /* Seção de Download e Compatibilidade */
         .download-area {
-            background: var(--card-bg);
-            border-radius: 30px;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid #333;
-            margin-bottom: 40px;
+            background: var(--card-bg); border-radius: 30px; padding: 40px; text-align: center; border: 1px solid #333; margin-bottom: 40px;
         }
-        .compatibilidade-tags {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .tag-device {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: 1px solid #444;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        
+        .compatibilidade-tags { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+        .tag-device { background: rgba(255, 255, 255, 0.05); padding: 10px 20px; border-radius: 10px; border: 1px solid #444; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
         .tag-device i { color: var(--primary); }
 
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
         .app-card {
-            background: #222;
-            padding: 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: 0.3s;
-            border: 1px solid transparent;
+            background: #222; padding: 20px; border-radius: 20px; text-decoration: none; color: white;
+            display: flex; align-items: center; gap: 15px; transition: 0.3s; border: 1px solid transparent;
         }
         .app-card:hover { border-color: var(--primary); background: #282828; transform: translateY(-5px); }
         .app-card i { font-size: 2.5rem; color: var(--accent); }
@@ -114,37 +81,36 @@
 
     <div class="container">
         <div class="download-area">
-            <h2 style="margin-bottom: 10px;">Compatibilidade Total</h2>
-            <p style="color: #aaa; margin-bottom: 30px;">Nosso sistema funciona em Smart TVs (Samsung, LG, Android TV), TV Box, Celulares e Computadores.</p>
+            <h2 style="margin-bottom: 10px;">Assista onde quiser</h2>
+            <p style="color: #aaa; margin-bottom: 30px;">Compatível com Smart TVs, Android TV, TV Box, Celulares e Tablets.</p>
             
             <div class="compatibilidade-tags">
                 <div class="tag-device"><i class="fas fa-tv"></i> Smart TV</div>
                 <div class="tag-device"><i class="fab fa-android"></i> Android TV / Box</div>
                 <div class="tag-device"><i class="fas fa-mobile-alt"></i> Celular</div>
-                <div class="tag-device"><i class="fas fa-laptop"></i> PC / Notebook</div>
             </div>
 
-            <h3 style="color: var(--primary); text-transform: uppercase; font-size: 1rem; letter-spacing: 2px;">Baixe nossos Aplicativos Oficiais</h3>
+            <h3 style="color: var(--primary); text-transform: uppercase; font-size: 1rem; letter-spacing: 2px;">Nossos Aplicativos</h3>
             <div class="app-grid">
                 <a href="https://play.google.com/store/apps/details?id=com.colinet.boxv3" target="_blank" class="app-card">
                     <i class="fab fa-google-play"></i>
                     <div>
-                        <b>HBK ON V3</b>
-                        <span>Para Celular, TV Box e Android TV</span>
+                        <b>Ibo Revenda</b>
+                        <span>Ideal para TV Box e Android TV</span>
                     </div>
                 </a>
 
                 <a href="https://play.google.com/store/apps/details?id=com.gplayer.pro" target="_blank" class="app-card">
                     <i class="fab fa-google-play"></i>
                     <div>
-                        <b>GPlayer Pro</b>
-                        <span>Player Alternativo de Alta Performance</span>
+                        <b>Vu Revenda</b>
+                        <span>Alta performance para Smart TV e Celular</span>
                     </div>
                 </a>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--primary);">Escolha seu Plano</h2>
+        <h2 style="text-align: center; color: var(--primary);">Planos de Assinatura</h2>
         <div class="planos">
             <div class="plano-card">
                 <h3>Plano Mensal</h3>
@@ -154,18 +120,18 @@
             </div>
 
             <div class="plano-card destaque">
-                <div style="background: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">MAIS POPULAR</div>
+                <div style="background: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">MAIS VENDIDO</div>
                 <h3>Plano Semestral</h3>
                 <div class="valor-pix">R$ 180<span>/6 meses</span></div>
                 <div class="valor-cartao">Cartão: R$ 195,00</div>
-                <a href="https://wa.me/556992264789?text=Olá! Quero o PLANO SEMESTRAL de R$ 180,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
+                <a href="https://wa.me/556992264789?text=Olá! Quero assinar o PLANO SEMESTRAL de R$ 180,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
 
             <div class="plano-card">
                 <h3>Plano Anual</h3>
                 <div class="valor-pix">R$ 260<span>/ano</span></div>
                 <div class="valor-cartao">Cartão: R$ 285,00</div>
-                <a href="https://wa.me/556992264789?text=Olá! Quero o PLANO ANUAL de R$ 260,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
+                <a href="https://wa.me/556992264789?text=Olá! Quero assinar o PLANO ANUAL de R$ 260,00." class="btn-principal" style="width: 80%;">ASSINAR</a>
             </div>
         </div>
     </div>
@@ -175,5 +141,5 @@
     </a>
 
 </body>
-                    </html>
-                                       
+</html>
+
