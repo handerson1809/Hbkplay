@@ -26,13 +26,14 @@ header{
   gap:12px;padding:10px 0
 }
 header img{width:52px}
-header .btn{padding:10px 14px}
 
 .btn{
   border-radius:999px;border:1px solid #ffffff22;
   background:#ffffff0a;color:var(--txt);
   font-weight:800;font-size:13px;
-  cursor:pointer
+  padding:10px 14px;
+  cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px
 }
 .btn.primary{
   background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -46,10 +47,7 @@ header .btn{padding:10px 14px}
   padding:18px;margin-top:14px
 }
 
-.hero h1{
-  font-size:36px;margin:0;
-  text-transform:uppercase
-}
+.hero h1{font-size:36px;margin:0;text-transform:uppercase}
 .hero span{color:var(--accent)}
 .hero p{color:var(--muted);line-height:1.6}
 
@@ -74,9 +72,9 @@ header .btn{padding:10px 14px}
   width:56px;height:56px;border-radius:50%;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   display:grid;place-items:center;
-  font-weight:900;color:#120602;
-  cursor:pointer
+  cursor:pointer;z-index:999
 }
+.whats svg{width:26px;height:26px;fill:#120602}
 </style>
 </head>
 
@@ -84,7 +82,7 @@ header .btn{padding:10px 14px}
 <div class="wrap">
 
 <header>
-  <img src="https://i.postimg.cc/ppQ5wfZS/1766040073299.png">
+  <img src="https://i.postimg.cc/ppQ5wfZS/1766040073299.png" alt="HBKPLAY TV">
   <div>
     <button class="btn" data-wa="planos">Planos</button>
     <button class="btn primary" data-wa="teste">Teste 4h</button>
@@ -105,7 +103,6 @@ header .btn{padding:10px 14px}
 
 <section class="panel">
   <h2>💱 Planos HBKPLAY TV</h2>
-
   <div class="grid">
     <div>
       <h3>PIX / Transferência</h3>
@@ -142,19 +139,20 @@ header .btn{padding:10px 14px}
 
 <section class="panel">
   <h2>📲 Aplicativo Android</h2>
-  <p class="muted">
-    App oficial para Android TV, TV Box e celular.
-  </p>
+  <p class="muted">Clique abaixo para abrir direto na Play Store e instalar</p>
+
   <div class="apps">
-    <a class="btn" target="_blank"
-       href="https://play.google.com/store/apps/details?id=com.colinet.boxv3">
-       IBO REVENDA
-    </a>
-    <a class="btn" target="_blank"
-       href="https://play.google.com/store/apps/details?id=com.gplayer.pro">
-       VU REVENDA
-    </a>
-    <button class="btn primary" data-wa="ajuda">Ajuda para instalar</button>
+    <a class="btn primary"
+       href="https://play.google.com/store/apps/details?id=com.colinet.boxv3"
+       onclick="if(navigator.userAgent.includes('Android')) this.href='market://details?id=com.colinet.boxv3';"
+       target="_blank">📥 Instalar IBO REVENDA</a>
+
+    <a class="btn primary"
+       href="https://play.google.com/store/apps/details?id=com.gplayer.pro"
+       onclick="if(navigator.userAgent.includes('Android')) this.href='market://details?id=com.gplayer.pro';"
+       target="_blank">📥 Instalar VU REVENDA</a>
+
+    <button class="btn" data-wa="ajuda">Ajuda para instalar</button>
   </div>
 </section>
 
@@ -166,7 +164,12 @@ header .btn{padding:10px 14px}
 
 </div>
 
-<div class="whats" onclick="openWA('atendimento')">WA</div>
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<div class="whats" onclick="openWA('atendimento')" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M20.5 3.5A11 11 0 0 0 2.2 16.7L1 23l6.5-1.7A11 11 0 0 0 20.5 3.5ZM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.9 1 1-3.8-.2-.3A9 9 0 1 1 12 21Zm5.2-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2.1c-.2-.5-.4-.4-.6-.4H6.8c-.2 0-.5.1-.7.3S5.2 8.3 5.2 9.8s1 2.9 1.1 3.1c.1.2 2 3.1 4.9 4.4.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.6 1.8-1.2s.2-1.1.1-1.2c0-.1-.2-.2-.5-.3Z"/>
+  </svg>
+</div>
 
 <script>
 const W="5569992264789";
@@ -179,8 +182,9 @@ const M={
  mensal_cartao:`Olá! Quero o PLANO MENSAL no CARTÃO (R$42).\nDispositivo: ${D}`,
  ajuda:`Olá! Preciso de ajuda para instalar o app HBKPLAY TV.\nDispositivo: ${D}`
 };
+
 function openWA(k){
-  window.open(`https://wa.me/${W}?text=${encodeURIComponent(M[k])}`);
+  window.open(`https://wa.me/${W}?text=${encodeURIComponent(M[k]||M.atendimento)}`);
 }
 document.querySelectorAll("[data-wa]")
 .forEach(b=>b.onclick=()=>openWA(b.dataset.wa));
